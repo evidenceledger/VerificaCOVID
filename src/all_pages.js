@@ -4,6 +4,7 @@ import { DisplayHcert } from './pages/hcertpage'
 import { DemoPage } from './pages/demo'
 import { Page404 } from './pages/page404'
 import { ScanQrPage } from './pages/scanqr'
+import { HWScanPage } from './pages/hwscanner'
 import { SWNotify } from "./pages/swnotify";
 import { Intro } from "./pages/intro";
 import { Spinner } from "./pages/spinner";
@@ -76,6 +77,10 @@ export var pageDefs = [
     {
         name: "refreshKeys",
         className: RefreshKeys
+    },
+    {
+        name: "hwScanPage",
+        className: HWScanPage
     },
 ]
 

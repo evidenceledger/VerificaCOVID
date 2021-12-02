@@ -6,7 +6,8 @@ import { BrowserQRCodeReader } from '@zxing/browser';
 import { AbstractPage } from './abstractpage'
 
 // This is to facilitate debugging of certificates
-var testQRdata = "Put here the data for the QR of the certificate"
+
+var testQRdata = "HC1:Put the test QR data here"
 
 var testQR = {
     text: testQRdata
