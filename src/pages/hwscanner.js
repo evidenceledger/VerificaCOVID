@@ -22,12 +22,6 @@ export class HWScanPage extends AbstractPage {
 
     constructor(id) {
         super(id);
-
-        // Create the input field to receive the characters from the HW scanner
-        //    this.inputQR = document.createElement("textarea")
-        //    this.inputQR.style.display = "none"
-        //    this.inputQR.oninput = this.inputReceived
-
     }
 
     async enter() {
@@ -43,33 +37,23 @@ export class HWScanPage extends AbstractPage {
                 <h2 id="hwScanMsg" class="margin-bottom" style="word-break:break-word">${T("Scan the QR with the device")}</h2>
                 <h2 id="hwScanProcessingMsg" class="margin-bottom hide">${T("Processing ...")}</h2>
                 <div id="hwScanSpinner" class="loader hide"></div>
-                <textarea id="inputQR" rows="10" colums="100"></textarea>
+                <textarea @blur=${() => refocus()} id="inputQR" rows="30" colums="100" autofocus></textarea>
             </div>
-
-            <div class="sect-white">
-                <button @click=${() => validateQR()} class="w3-button btn-color-primary btn-hover-color-primary
-                w3-xlarge w3-round-xlarge">
-                ${T("Verifica")}</button>
-            </div>
-
-            <div class="sect-white">
-                <button @click=${self.reset} class="w3-button btn-color-primary btn-hover-color-primary
-                w3-xlarge w3-round-xlarge">
-                ${T("Reset")}</button>
-            </div>
-
 
         `;
 
         // Prepare the screen
         this.render(theHtml)
 
+        // Reset the textarea and set focus, just in case
         let inputQR = document.getElementById("inputQR")
         inputQR.value = ""
         inputQR.focus()
 
-
-        //self.intervalID = setInterval(periodicCheck, 500, 'Parameter 1', 'Parameter 2');
+        // Start the timer
+        window.lastReceivedDataLen = 0
+        window.counterReceivedData = 0
+        self.intervalID = setTimeout(periodicCheck, 400);
 
         let x = document.getElementById("hwScanMsg")
         x.classList.remove("hide")
@@ -78,40 +62,7 @@ export class HWScanPage extends AbstractPage {
         x = document.getElementById("hwScanProcessingMsg")
         x.classList.add("hide")
 
-
     }
-
-    inputReceived(e) {
-        if (window.firstCharReceived == false) {
-            console.log("First char received")
-            window.firstCharReceived = true
-            let x = document.getElementById("hwScanMsg")
-            x.classList.add("hide")
-            x = document.getElementById("hwScanSpinner")
-            x.classList.remove("hide")
-            x = document.getElementById("hwScanProcessingMsg")
-            x.classList.remove("hide")
-        }
-        if (e.key == "Shift") {
-            return;
-        }
-        if (e.key == "Enter") {
-            let qrData = window.keysQR.join("")
-            let result = { text: qrData }
-            window.keysQR = []
-            processQRpiece(result)
-            //            console.log(window.keysQR.join(""))
-            return
-        }
-        window.keysQR.push(e.key)
-    }
-
-    reset(e) {
-        let inputQR = document.getElementById("inputQR")
-        inputQR.value = ""
-        inputQR.focus()
-    }
-
 
     async exit() {
         // Stop the timer
@@ -120,6 +71,10 @@ export class HWScanPage extends AbstractPage {
 
 }
 
+function refocus() {
+    console.log("Refocusing")
+    document.getElementById("inputQR").focus()
+}
 
 function validateQR(e) {
     console.log("Verifying")
@@ -130,25 +85,31 @@ function validateQR(e) {
     inputQR.value = ""
 }
 
+function periodicCheck() {
+    console.log("Timer");
 
-function periodicCheck(a, b) {
-    console.log(a);
-    console.log(b);
+    // Get the data in the textarea
+    let currentData = document.getElementById("inputQR").value
+    let currentDataLen = currentData.length
+    let lastDataLen = window.lastReceivedDataLen
+    window.lastReceivedDataLen = currentDataLen
 
-    let receivedData = document.getElementById("inputQR").value
-    if (receivedData.length > 10) {
-        window.firstCharReceived = true
-        let x = document.getElementById("hwScanMsg")
-        x.classList.add("hide")
-        x = document.getElementById("hwScanSpinner")
-        x.classList.remove("hide")
-        x = document.getElementById("hwScanProcessingMsg")
-        x.classList.remove("hide")
+    // Start checking when there are more than 10 chars in the textarea
+    if (currentDataLen > 10) {
 
-        let result = { text: receivedData }
-        processQRpiece(result)
-        document.getElementById("inputQR").value = ""
+        // If current and last lengths are the same, there has been inactivity
+        // Try to verify the data
+        if (currentDataLen == lastDataLen) {
+            console.log("Verifying")
+            let data = currentData.trim()
+            let result = { text: data }
+            processQRpiece(result)
+            inputQR.value = ""            
+        }
+
     }
+    self.intervalID = setTimeout(periodicCheck, 400);
+
 }
 
 
