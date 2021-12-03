@@ -1,7 +1,7 @@
 //import { gotoPage } from "../router";
 var gotoPage = window.gotoPage
 import { html } from 'lit-html';
-import { log } from '../log'
+import {log} from '../log'
 import { AbstractPage } from './abstractpage'
 
 // This is to facilitate debugging of certificates
@@ -24,9 +24,9 @@ export class HWScanPage extends AbstractPage {
         super(id);
 
         // Create the input field to receive the characters from the HW scanner
-        //    this.inputQR = document.createElement("textarea")
-        //    this.inputQR.style.display = "none"
-        //    this.inputQR.oninput = this.inputReceived
+    //    this.inputQR = document.createElement("textarea")
+    //    this.inputQR.style.display = "none"
+    //    this.inputQR.oninput = this.inputReceived
 
     }
 
@@ -40,36 +40,15 @@ export class HWScanPage extends AbstractPage {
 
         let theHtml = html`
             <div class="sect-white">
-                <h2 id="hwScanMsg" class="margin-bottom" style="word-break:break-word">${T("Scan the QR with the device")}</h2>
-                <h2 id="hwScanProcessingMsg" class="margin-bottom hide">${T("Processing ...")}</h2>
-                <div id="hwScanSpinner" class="loader hide"></div>
-                <textarea id="inputQR" rows="10" colums="100"></textarea>
+            <h2 id="hwScanMsg" class="margin-bottom" style="word-break:break-word">${T("Scan the QR with the device")}</h2>
+            <h2 id="hwScanProcessingMsg" class="margin-bottom hide" style="word-break:break-word">${T("Processing ...")}</h2>
+            <div id="hwScanSpinner" class="loader hide"></div>
             </div>
-
-            <div class="sect-white">
-                <button @click=${() => validateQR()} class="w3-button btn-color-primary btn-hover-color-primary
-                w3-xlarge w3-round-xlarge">
-                ${T("Verifica")}</button>
-            </div>
-
-            <div class="sect-white">
-                <button @click=${self.reset} class="w3-button btn-color-primary btn-hover-color-primary
-                w3-xlarge w3-round-xlarge">
-                ${T("Reset")}</button>
-            </div>
-
 
         `;
 
         // Prepare the screen
         this.render(theHtml)
-
-        let inputQR = document.getElementById("inputQR")
-        inputQR.value = ""
-        inputQR.focus()
-
-
-        //self.intervalID = setInterval(periodicCheck, 500, 'Parameter 1', 'Parameter 2');
 
         let x = document.getElementById("hwScanMsg")
         x.classList.remove("hide")
@@ -78,10 +57,14 @@ export class HWScanPage extends AbstractPage {
         x = document.getElementById("hwScanProcessingMsg")
         x.classList.add("hide")
 
+        window.keysQR = []
+        window.firstCharReceived = false
+        window.enterReceived = false
+        document.onkeydown = this.inputReceived
 
     }
 
-    inputReceived(e) {
+    inputReceived(e){
         if (window.firstCharReceived == false) {
             console.log("First char received")
             window.firstCharReceived = true
@@ -97,60 +80,25 @@ export class HWScanPage extends AbstractPage {
         }
         if (e.key == "Enter") {
             let qrData = window.keysQR.join("")
-            let result = { text: qrData }
+            let result = {text: qrData}
             window.keysQR = []
             processQRpiece(result)
-            //            console.log(window.keysQR.join(""))
+//            console.log(window.keysQR.join(""))
             return
         }
         window.keysQR.push(e.key)
     }
 
-    reset(e) {
+    buttonPressed(e){
         let inputQR = document.getElementById("inputQR")
-        inputQR.value = ""
-        inputQR.focus()
+        console.log(inputQR.value)
     }
-
-
+    
     async exit() {
-        // Stop the timer
-        clearInterval(self.intervalID)
+        // Do nothing
     }
 
 }
-
-
-function validateQR(e) {
-    console.log("Verifying")
-    let inputQR = document.getElementById("inputQR")
-    let data = inputQR.value.trim()
-    let result = { text: data }
-    processQRpiece(result)
-    inputQR.value = ""
-}
-
-
-function periodicCheck(a, b) {
-    console.log(a);
-    console.log(b);
-
-    let receivedData = document.getElementById("inputQR").value
-    if (receivedData.length > 10) {
-        window.firstCharReceived = true
-        let x = document.getElementById("hwScanMsg")
-        x.classList.add("hide")
-        x = document.getElementById("hwScanSpinner")
-        x.classList.remove("hide")
-        x = document.getElementById("hwScanProcessingMsg")
-        x.classList.remove("hide")
-
-        let result = { text: receivedData }
-        processQRpiece(result)
-        document.getElementById("inputQR").value = ""
-    }
-}
-
 
 
 const QR_UNKNOWN = 0
@@ -185,21 +133,21 @@ async function processQRpiece(readerResult) {
 function detectQRtype(readerResult) {
     // Try to detect the type of data received
     let qrData = readerResult.text
-
+  
     console.log("detectQRtype:", qrData);
     if (!qrData.startsWith) {
         log.myerror("detectQRtype: data is not string")
     }
-
+  
     if (qrData.startsWith("https")) {
-        // We require secure connections
-        // Normal QR: we receive a URL where the real data is located
-        return QR_URL;
+      // We require secure connections
+      // Normal QR: we receive a URL where the real data is located
+      return QR_URL;
     } else if (qrData.startsWith("multi|w3cvc|")) {
-        // A multi-piece JWT
-        return QR_MULTI;
+      // A multi-piece JWT
+      return QR_MULTI;
     } else if (qrData.startsWith("HC1:")) {
-        return QR_HC1;
+      return QR_HC1;
     } else {
         return QR_UNKNOWN
     }
