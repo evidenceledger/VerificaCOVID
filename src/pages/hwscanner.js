@@ -15,6 +15,7 @@ var testQR = {
 var debugging = false
 
 window.keysQR = []
+window.firstCharReceived = false
 window.enterReceived = false
 
 export class HWScanPage extends AbstractPage {
@@ -39,7 +40,9 @@ export class HWScanPage extends AbstractPage {
 
         let theHtml = html`
             <div class="sect-white">
-            <h2 class="margin-bottom" style="word-break:break-word">${T("Scan the QR with the device")}</h2>
+            <h2 id="hwScanMsg" class="margin-bottom" style="word-break:break-word">${T("Scan the QR with the device")}</h2>
+            <h2 id="hwScanProcessingMsg" class="margin-bottom hide" style="word-break:break-word">${T("Processing ...")}</h2>
+            <div id="hwScanSpinner" class="loader hide"></div>
             </div>
 
         `;
@@ -47,13 +50,31 @@ export class HWScanPage extends AbstractPage {
         // Prepare the screen
         this.render(theHtml)
 
+        let x = document.getElementById("hwScanMsg")
+        x.classList.remove("hide")
+        x = document.getElementById("hwScanSpinner")
+        x.classList.add("hide")
+        x = document.getElementById("hwScanProcessingMsg")
+        x.classList.add("hide")
+
         window.keysQR = []
+        window.firstCharReceived = false
         window.enterReceived = false
         document.onkeydown = this.inputReceived
 
     }
 
     inputReceived(e){
+        if (window.firstCharReceived == false) {
+            console.log("First char received")
+            window.firstCharReceived = true
+            let x = document.getElementById("hwScanMsg")
+            x.classList.add("hide")
+            x = document.getElementById("hwScanSpinner")
+            x.classList.remove("hide")
+            x = document.getElementById("hwScanProcessingMsg")
+            x.classList.remove("hide")
+        }
         if (e.key == "Shift") {
             return;
         }
