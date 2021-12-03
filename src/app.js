@@ -76,6 +76,8 @@ async function processPageEntered(pageName, pageData, historyData) {
 
     // Reset scroll position to make sure the page is at the top
     window.scrollTo(0, 0);
+    // And get the focus away from any element before entering new page
+    document.activeElement.blur()
 
     try {
         // Invoke the registered function when page has entered
