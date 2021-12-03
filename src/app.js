@@ -6,6 +6,10 @@ window.appVersion = buildDate
 window.localStorage.setItem("VERSION", appVersion)
 console.log("Version:", appVersion)
 
+// Store current time to check later if we require a refresh
+let timeNow = Date.now()
+window.localStorage.setItem("TIMELOADED", timeNow)
+
 import { log } from "./log";
 
 // **************************************
@@ -97,6 +101,24 @@ async function processPageEntered(pageName, pageData, historyData) {
 }
 
 export async function goHome() {
+    console.log("Inside goHome")
+
+    // When going to Home, check if we should refresh the app and keys
+    let currentTime = Date.now()
+    let lastRefresh = window.localStorage.getItem("TIMELOADED")
+    let elapsed = (currentTime - lastRefresh) // In milliseconds
+
+    console.log("Last:", lastRefresh)
+    console.log("Current:", currentTime)
+    console.log("Elapsed:", elapsed)
+    // Refresh the app + keys if more than 1 day old
+    if (elapsed > 24*60*60*1000) {
+        console.log("Refreshing the application and keys")
+        window.location.reload()
+        return;
+    }
+
+    // Go to the home page
     if (homePage != undefined) {
         await gotoPage(homePage);
     }
@@ -106,6 +128,7 @@ window.goHome = goHome
 export async function gotoPage(pageName, pageData) {
     console.log("Inside gotPage", pageName)
 
+    // Make sure that pageData has at least an empty object
     if (!pageData) {
         pageData = {}
     }
