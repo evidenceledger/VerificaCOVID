@@ -1,7 +1,7 @@
 //import { gotoPage } from "../router";
 var gotoPage = window.gotoPage
 import { html } from 'lit-html';
-import { log } from '../log'
+import {log} from '../log'
 import { AbstractPage } from './abstractpage'
 
 // This is to facilitate debugging of certificates
@@ -34,10 +34,10 @@ export class HWScanPage extends AbstractPage {
 
         let theHtml = html`
             <div class="sect-white">
-                <h2 id="hwScanMsg" class="margin-bottom" style="word-break:break-word">${T("Scan the QR with the device")}</h2>
-                <h2 id="hwScanProcessingMsg" class="margin-bottom hide">${T("Processing ...")}</h2>
-                <div id="hwScanSpinner" class="loader hide"></div>
-                <textarea id="inputQR" rows="30" colums="100"></textarea>
+            <h2 id="hwScanMsg" class="margin-bottom" style="word-break:break-word">${T("Scan the QR with the device")}</h2>
+            <h2 id="hwScanProcessingMsg" class="margin-bottom hide" style="word-break:break-word">${T("Processing ...")}</h2>
+            <div id="hwScanSpinner" class="loader hide"></div>
+            <textarea id="showKeys" rows="30" colums="100"></textarea>
             </div>
 
         `;
@@ -45,20 +45,16 @@ export class HWScanPage extends AbstractPage {
         // Prepare the screen
         this.render(theHtml)
 
-        // Reset the textarea and set focus, just in case
-        let inputQR = document.getElementById("inputQR")
-        inputQR.addEventListener("keyup", this.keyDownReceived)
-
-        inputQR.value = ""
-        inputQR.focus()
-
-
-        // Start the timer
-        window.lastReceivedDataLen = 0
-        window.counterReceivedData = 0
-        self.intervalID = setTimeout(periodicCheck, 400);
-
         this.hideSpinner()
+
+        window.keysQR = []
+        window.firstCharReceived = false
+        window.enterReceived = false
+
+        let body = document.querySelector('body');
+        body.focus()
+        body.addEventListener("keyup", this.keyDownReceived)
+
     }
 
     keyDownReceived(e){
@@ -71,13 +67,23 @@ export class HWScanPage extends AbstractPage {
         if (key == "H") {
             alert("H received")
             console.log("First char received")
+            window.firstCharReceived = true
+            this.showSpinner()
         }
-        if (key == "Enter") {
+        if (e.key == "Enter") {
+            let qrData = window.keysQR.join("").trim()
+            let result = {text: qrData}
+            window.keysQR = []
+            processQRpiece(result)
             return
         }
+        window.keysQR.push(e.key)
+        let qrData = window.keysQR.join("").trim()
+        let inputQR = document.getElementById("showKeys")
+        inputQR.value = qrData
 
     }
-
+    
     hideSpinner() {
         let x = document.getElementById("hwScanMsg")
         x.classList.remove("hide")
@@ -97,49 +103,10 @@ export class HWScanPage extends AbstractPage {
     }
 
     async exit() {
-        // Stop the timer
-        clearInterval(self.intervalID)
+        // Do nothing
     }
 
 }
-
-
-function validateQR(e) {
-    console.log("Verifying")
-    let inputQR = document.getElementById("inputQR")
-    let data = inputQR.value.trim()
-    let result = { text: data }
-    processQRpiece(result)
-    inputQR.value = ""
-}
-
-function periodicCheck() {
-    console.log("Timer");
-
-    // Get the data in the textarea
-    let currentData = document.getElementById("inputQR").value
-    let currentDataLen = currentData.length
-    let lastDataLen = window.lastReceivedDataLen
-    window.lastReceivedDataLen = currentDataLen
-
-    // Start checking when there are more than 10 chars in the textarea
-    if (currentDataLen > 10) {
-
-        // If current and last lengths are the same, there has been inactivity
-        // Try to verify the data
-        if (currentDataLen == lastDataLen) {
-            console.log("Verifying")
-            let data = currentData.trim()
-            let result = { text: data }
-            processQRpiece(result)
-            inputQR.value = ""            
-        }
-
-    }
-    self.intervalID = setTimeout(periodicCheck, 400);
-
-}
-
 
 
 const QR_UNKNOWN = 0
@@ -174,21 +141,21 @@ async function processQRpiece(readerResult) {
 function detectQRtype(readerResult) {
     // Try to detect the type of data received
     let qrData = readerResult.text
-
+  
     console.log("detectQRtype:", qrData);
     if (!qrData.startsWith) {
         log.myerror("detectQRtype: data is not string")
     }
-
+  
     if (qrData.startsWith("https")) {
-        // We require secure connections
-        // Normal QR: we receive a URL where the real data is located
-        return QR_URL;
+      // We require secure connections
+      // Normal QR: we receive a URL where the real data is located
+      return QR_URL;
     } else if (qrData.startsWith("multi|w3cvc|")) {
-        // A multi-piece JWT
-        return QR_MULTI;
+      // A multi-piece JWT
+      return QR_MULTI;
     } else if (qrData.startsWith("HC1:")) {
-        return QR_HC1;
+      return QR_HC1;
     } else {
         return QR_UNKNOWN
     }
