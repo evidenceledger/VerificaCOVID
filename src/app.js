@@ -225,24 +225,31 @@ window.initialHeader = initialHeader
 // Initial screen
 function initialScreen() {
     var initialScreenHTML;
-        initialScreenHTML = `
-        <div class="sect-white">
-            <h2 class="margin-bottom" style="word-break:break-word">${T("EU Digital COVID Credential Verifier")}</h2>
-            <p>${T("$intro01")}</p>
-    
-            <div class="padding-16 center">
-    
-                <button onclick='gotoPage("verifier")' class="btn color-primary hover-color-primary
-                    xlarge round-xlarge focus-visible-only">
-                    ${T("Start verifying")}
-                </button>
-                <br><br>
-                <a style="font-weight: bold" onclick='gotoPage("faqs")' href="javascript:void(0)">${T("Frequently asked questions (FAQS)")}</a>
+    // initialScreenHTML = `
+    // <div class="sect-white">
+    //     <h2 class="margin-bottom" style="word-break:break-word">${T("EU Digital COVID Credential Verifier")}</h2>
+    //     <p>${T("$intro01")}</p>
 
-    
-            </div>
+    //     <div class="padding-16 center">
+
+    //         <button onclick='gotoPage("verifier")' class="btn color-primary hover-color-primary
+    //             xlarge round-xlarge focus-visible-only">
+    //             ${T("Start verifying")}
+    //         </button>
+    //         <br><br>
+    //         <a style="font-weight: bold" onclick='gotoPage("faqs")' href="javascript:void(0)">${T("Frequently asked questions (FAQS)")}</a>
+
+
+    //     </div>
+    // </div>
+    // `;
+
+    initialScreenHTML = html`
+        <div class="sect-white">
+            <h2 id="hwScanMsg" class="margin-bottom" style="word-break:break-word">${T("Scan the QR with the device")}</h2>
         </div>
-        `;
+
+    `;
     
     document.getElementById('intro').innerHTML = initialScreenHTML
 }
