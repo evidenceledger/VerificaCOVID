@@ -55,7 +55,7 @@ export class HWScanPage extends AbstractPage {
         window.keysQR = []
         window.firstCharReceived = false
         window.enterReceived = false
-        document.onkeydown = this.inputReceived
+        document.onkeyup = this.inputReceived
 
     }
 
