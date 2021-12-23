@@ -62,6 +62,7 @@ export class HWScanPage extends AbstractPage {
     inputReceived(e){
         if (window.firstCharReceived == false) {
             console.log("First char received")
+            alert("First key received")
             window.firstCharReceived = true
             let x = document.getElementById("hwScanMsg")
             x.classList.add("hide")
