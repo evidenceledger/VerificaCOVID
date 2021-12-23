@@ -115,6 +115,7 @@ section,.section{padding:0.01em 10px;margin-top:0px;margin-bottom:10px;}
 
 textarea {
     display : block;
+    color: transparent;
   
     padding : 10px;
     margin  : auto;
