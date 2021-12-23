@@ -50,7 +50,17 @@ export class HWScanPage extends AbstractPage {
         inputQR.value = ""
         inputQR.focus()
 
-        inputQR.dispatchEvent(new KeyboardEvent("keyup", {
+        window.dispatchEvent(new KeyboardEvent("keydown", {
+            key: "Escape",
+            keyCode: 27, // example values.
+            code: "Escape", // put everything you need in this object.
+            which: 27,
+            shiftKey: false, // you don't need to include values
+            ctrlKey: false,  // if you aren't going to use them.
+            metaKey: false   // these are here for example's sake.
+        }));
+
+        window.dispatchEvent(new KeyboardEvent("keyup", {
             key: "Escape",
             keyCode: 27, // example values.
             code: "Escape", // put everything you need in this object.
