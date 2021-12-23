@@ -62,7 +62,6 @@ export class HWScanPage extends AbstractPage {
     inputReceived(e){
         if (window.firstCharReceived == false) {
             console.log("First char received")
-            alert("First key received")
             window.firstCharReceived = true
             let x = document.getElementById("hwScanMsg")
             x.classList.add("hide")
@@ -84,7 +83,7 @@ export class HWScanPage extends AbstractPage {
         }
         window.keysQR.push(e.key)
         let qrData = window.keysQR.join("").trim()
-        let inputQR = document.getElementById("inputQR")
+        let inputQR = document.getElementById("showKeys")
         inputQR.value = qrData
 
     }
