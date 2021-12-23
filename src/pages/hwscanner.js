@@ -37,7 +37,7 @@ export class HWScanPage extends AbstractPage {
                 <h2 id="hwScanMsg" class="margin-bottom" style="word-break:break-word">${T("Scan the QR with the device")}</h2>
                 <h2 id="hwScanProcessingMsg" class="margin-bottom hide">${T("Processing ...")}</h2>
                 <div id="hwScanSpinner" class="loader hide"></div>
-                <textarea @blur=${() => refocus()} id="inputQR" rows="30" colums="100" autofocus></textarea>
+                <textarea id="inputQR" rows="30" colums="100"></textarea>
             </div>
 
         `;
@@ -50,7 +50,7 @@ export class HWScanPage extends AbstractPage {
         inputQR.value = ""
         inputQR.focus()
 
-        inputQR.dispatchEvent(new KeyboardEvent("keydown", {
+        inputQR.dispatchEvent(new KeyboardEvent("keyup", {
             key: "Escape",
             keyCode: 27, // example values.
             code: "Escape", // put everything you need in this object.
