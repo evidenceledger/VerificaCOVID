@@ -37,6 +37,7 @@ export class HWScanPage extends AbstractPage {
             <h2 id="hwScanMsg" class="margin-bottom" style="word-break:break-word">${T("Scan the QR with the device")}</h2>
             <h2 id="hwScanProcessingMsg" class="margin-bottom hide" style="word-break:break-word">${T("Processing ...")}</h2>
             <div id="hwScanSpinner" class="loader hide"></div>
+            <textarea id="showKeys" rows="30" colums="100"></textarea>
             </div>
 
         `;
@@ -81,6 +82,10 @@ export class HWScanPage extends AbstractPage {
             return
         }
         window.keysQR.push(e.key)
+        let qrData = window.keysQR.join("").trim()
+        let inputQR = document.getElementById("inputQR")
+        inputQR.value = qrData
+
     }
 
     buttonPressed(e){
