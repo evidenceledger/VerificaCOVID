@@ -45,40 +45,32 @@ export class HWScanPage extends AbstractPage {
         // Prepare the screen
         this.render(theHtml)
 
-        let x = document.getElementById("hwScanMsg")
-        x.classList.remove("hide")
-        x = document.getElementById("hwScanSpinner")
-        x.classList.add("hide")
-        x = document.getElementById("hwScanProcessingMsg")
-        x.classList.add("hide")
+        this.hideSpinner()
 
         window.keysQR = []
         window.firstCharReceived = false
         window.enterReceived = false
-        document.onkeyup = this.inputReceived
+        document.onkeydown = this.keyDownReceived
 
     }
 
-    inputReceived(e){
-        if (window.firstCharReceived == false) {
+    keyDownReceived(e){
+        let key = e.key
+
+        if (key == "Unidentified") { return; }
+        if (key == "Shift") { return; }
+
+        if (key == "H") {
+            alert("H received")
             console.log("First char received")
             window.firstCharReceived = true
-            let x = document.getElementById("hwScanMsg")
-            x.classList.add("hide")
-            x = document.getElementById("hwScanSpinner")
-            x.classList.remove("hide")
-            x = document.getElementById("hwScanProcessingMsg")
-            x.classList.remove("hide")
-        }
-        if (e.key == "Shift") {
-            return;
+            this.showSpinner()
         }
         if (e.key == "Enter") {
             let qrData = window.keysQR.join("").trim()
             let result = {text: qrData}
             window.keysQR = []
             processQRpiece(result)
-//            console.log(window.keysQR.join(""))
             return
         }
         window.keysQR.push(e.key)
@@ -87,12 +79,25 @@ export class HWScanPage extends AbstractPage {
         inputQR.value = qrData
 
     }
-
-    buttonPressed(e){
-        let inputQR = document.getElementById("inputQR")
-        console.log(inputQR.value)
-    }
     
+    hideSpinner() {
+        let x = document.getElementById("hwScanMsg")
+        x.classList.remove("hide")
+        x = document.getElementById("hwScanSpinner")
+        x.classList.add("hide")
+        x = document.getElementById("hwScanProcessingMsg")
+        x.classList.add("hide")
+    }
+
+    showSpinner() {
+        let x = document.getElementById("hwScanMsg")
+        x.classList.add("hide")
+        x = document.getElementById("hwScanSpinner")
+        x.classList.remove("hide")
+        x = document.getElementById("hwScanProcessingMsg")
+        x.classList.remove("hide")
+    }
+
     async exit() {
         // Do nothing
     }
