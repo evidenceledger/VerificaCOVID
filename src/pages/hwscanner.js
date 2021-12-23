@@ -37,7 +37,7 @@ export class HWScanPage extends AbstractPage {
                 <h2 id="hwScanMsg" class="margin-bottom" style="word-break:break-word">${T("Scan the QR with the device")}</h2>
                 <h2 id="hwScanProcessingMsg" class="margin-bottom hide">${T("Processing ...")}</h2>
                 <div id="hwScanSpinner" class="loader hide"></div>
-                <textarea id="inputQR" rows="30" colums="100"></textarea>
+                <textarea id="inputQR" spellcheck="false" rows="30" colums="100"></textarea>
             </div>
 
         `;

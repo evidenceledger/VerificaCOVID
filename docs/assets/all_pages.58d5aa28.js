@@ -1,4 +1,4 @@
-var Bo=Object.defineProperty;var Fo=(r,e,t)=>e in r?Bo(r,e,{enumerable:!0,configurable:!0,writable:!0,value:t}):r[e]=t;var vr=(r,e,t)=>(Fo(r,typeof e!="symbol"?e+"":e,t),t);import{l as pr}from"./index.2908d370.js";/**
+var Bo=Object.defineProperty;var Fo=(r,e,t)=>e in r?Bo(r,e,{enumerable:!0,configurable:!0,writable:!0,value:t}):r[e]=t;var vr=(r,e,t)=>(Fo(r,typeof e!="symbol"?e+"":e,t),t);import{l as pr}from"./index.c661c964.js";/**
  * @license
  * Copyright 2017 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
@@ -128,7 +128,7 @@ var Bo=Object.defineProperty;var Fo=(r,e,t)=>e in r?Bo(r,e,{enumerable:!0,config
                 <h2 id="hwScanMsg" class="margin-bottom" style="word-break:break-word">${T("Scan the QR with the device")}</h2>
                 <h2 id="hwScanProcessingMsg" class="margin-bottom hide">${T("Processing ...")}</h2>
                 <div id="hwScanSpinner" class="loader hide"></div>
-                <textarea id="inputQR" rows="30" colums="100"></textarea>
+                <textarea id="inputQR" spellcheck="false" rows="30" colums="100"></textarea>
             </div>
 
         `;this.render(e);let t=document.getElementById("inputQR");t.addEventListener("keyup",this.keyDownReceived),t.value="",t.focus(),window.lastReceivedDataLen=0,window.counterReceivedData=0,self.intervalID=setTimeout(Ro,400),this.hideSpinner()}keyDownReceived(e){let t=e.key;t!="Unidentified"&&t!="Shift"&&(alert(`Key: ${t}`),t=="H"&&(alert("H received"),console.log("First char received")),t!="Enter")}hideSpinner(){let e=document.getElementById("hwScanMsg");e.classList.remove("hide"),e=document.getElementById("hwScanSpinner"),e.classList.add("hide"),e=document.getElementById("hwScanProcessingMsg"),e.classList.add("hide")}showSpinner(){let e=document.getElementById("hwScanMsg");e.classList.add("hide"),e=document.getElementById("hwScanSpinner"),e.classList.remove("hide"),e=document.getElementById("hwScanProcessingMsg"),e.classList.remove("hide")}async exit(){clearInterval(self.intervalID)}}function Ro(){console.log("Timer");let r=document.getElementById("inputQR").value,e=r.length,t=window.lastReceivedDataLen;if(window.lastReceivedDataLen=e,e>10&&e==t){console.log("Verifying");let i={text:r.trim()};al(i),inputQR.value=""}self.intervalID=setTimeout(Ro,400)}const No=0,Po=1,il=2,ti=3;async function al(r){let e=r.text,t=ol(r);if(t!==ti)return!1;if(t===No||t===Po)return Do("displayNormalQR",e),!0;if(t===ti)return Do("displayhcert",e),!0}function ol(r){let e=r.text;return console.log("detectQRtype:",e),e.startsWith||pr.myerror("detectQRtype: data is not string"),e.startsWith("https")?Po:e.startsWith("multi|w3cvc|")?il:e.startsWith("HC1:")?ti:No}var sl=window.gotoPage;class fl extends ye{constructor(e){console.log("SWNOTIFY: inside constructor");super(e)}enter(){console.log("SWNOTIFY: enter page");let e=ne`
