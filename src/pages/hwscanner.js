@@ -50,7 +50,7 @@ export class HWScanPage extends AbstractPage {
         window.keysQR = []
         window.firstCharReceived = false
         window.enterReceived = false
-        document.onkeydown = this.keyDownReceived
+        document.onkeyup = this.keyDownReceived
 
     }
 
@@ -59,6 +59,7 @@ export class HWScanPage extends AbstractPage {
 
         if (key == "Unidentified") { return; }
         if (key == "Shift") { return; }
+        alert(`Key: ${key}`)
 
         if (key == "H") {
             alert("H received")
