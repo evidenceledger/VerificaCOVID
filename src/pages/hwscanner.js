@@ -50,7 +50,10 @@ export class HWScanPage extends AbstractPage {
         window.keysQR = []
         window.firstCharReceived = false
         window.enterReceived = false
-        document.onkeyup = this.keyDownReceived
+
+        let body = document.querySelector('body');
+        body.focus()
+        body.addEventListener("keyup", this.keyDownReceived)
 
     }
 
