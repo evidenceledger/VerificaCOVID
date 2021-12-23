@@ -262,7 +262,7 @@ let initElem = document.createElement('div')
 initElem.id = 'intro'
 document.querySelector('main').append(initElem)
 // And draw it
-initialScreen();
+//initialScreen();
 
 // **************************************
 // Support for the Trusted Lists
