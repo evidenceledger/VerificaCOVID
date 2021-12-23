@@ -73,10 +73,18 @@ export class DisplayHcert extends AbstractPage {
             return;
         }
 
+        // let fullPage = html`
+        // ${thehtml}
+        // <div class="sect-white">
+        //     <button @click=${()=> gotoPage("hwScanPage")} class="w3-button btn-color-primary btn-hover-color-primary
+        //     w3-xlarge w3-round-xlarge">
+        //     ${T("Verify another")}</button>
+        // </div>
+        // `
         let fullPage = html`
         ${thehtml}
         <div class="sect-white">
-            <button @click=${()=> gotoPage("hwScanPage")} class="w3-button btn-color-primary btn-hover-color-primary
+            <button @click=${()=> location.reload()} class="w3-button btn-color-primary btn-hover-color-primary
             w3-xlarge w3-round-xlarge">
             ${T("Verify another")}</button>
         </div>
