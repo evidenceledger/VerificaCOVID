@@ -47,7 +47,6 @@ export class HWScanPage extends AbstractPage {
 
         // Reset the textarea and set focus, just in case
         let inputQR = document.getElementById("inputQR")
-        inputQR.addEventListener("keyup", this.keyDownReceived)
 
         inputQR.value = ""
         inputQR.focus()
@@ -56,26 +55,9 @@ export class HWScanPage extends AbstractPage {
         // Start the timer
         window.lastReceivedDataLen = 0
         window.counterReceivedData = 0
-        self.intervalID = setTimeout(periodicCheck, 400);
+        self.intervalID = setTimeout(periodicCheck, 200);
 
         this.hideSpinner()
-    }
-
-    keyDownReceived(e){
-        let key = e.key
-
-        if (key == "Unidentified") { return; }
-        if (key == "Shift") { return; }
-        alert(`Key: ${key}`)
-
-        if (key == "H") {
-            alert("H received")
-            console.log("First char received")
-        }
-        if (key == "Enter") {
-            return
-        }
-
     }
 
     hideSpinner() {
@@ -114,7 +96,7 @@ function validateQR(e) {
 }
 
 function periodicCheck() {
-    console.log("Timer");
+//    console.log("Timer");
 
     // Get the data in the textarea
     let currentData = document.getElementById("inputQR").value
@@ -136,7 +118,7 @@ function periodicCheck() {
         }
 
     }
-    self.intervalID = setTimeout(periodicCheck, 400);
+    self.intervalID = setTimeout(periodicCheck, 200);
 
 }
 
