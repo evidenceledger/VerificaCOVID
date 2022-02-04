@@ -14,7 +14,7 @@
     "logic": {
       "if": [
         {
-          "===": [
+          ">=": [
             {
               "var": "dn"
             },
@@ -152,7 +152,7 @@
               "var": "du"
             },
             {
-              "plusTime": [{ "var": "today" }, -2, "day"]
+              "plusTime": [{ "var": "today" }, -180, "day"]
             }
           ]
         },
