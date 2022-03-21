@@ -1770,7 +1770,7 @@
    },
    "test-manf.json": {
       "valueSetId": "covid-19-lab-test-manufacturer-and-name",
-      "valueSetDate": "2022-02-01",
+      "valueSetDate": "2022-03-21",
       "valueSetValues": {
          "1341": {
             "display": "Qingdao Hightop Biotech Co., Ltd, SARS-CoV-2 Antigen Rapid Test",
@@ -1965,7 +1965,7 @@
             "validUntil": null
          },
          "1501": {
-            "display": "New Gene (Hangzhou) Bioengineering Co., Ltd, COVID-19 Antigen Detection Kit",
+            "display": "New Gene (Hangzhou) Bioengineering Co., Ltd., COVID-19 Antigen Detection Kit",
             "lang": "en",
             "active": true,
             "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
@@ -2031,10 +2031,10 @@
          "1906": {
             "display": "Azure Biotech Inc, COVID-19 Antigen Rapid Test Device",
             "lang": "en",
-            "active": true,
+            "active": false,
             "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
-            "version": "2021-07-07 05:20:10 CEST",
-            "validUntil": "2022-02-16 00:00:00 CET"
+            "version": "2022-02-16 00:00:00 CET",
+            "validUntil": null
          },
          "768": {
             "display": "ArcDia International Ltd, mariPOC SARS-CoV-2",
@@ -2461,7 +2461,7 @@
             "validUntil": null
          },
          "2104": {
-            "display": "Nal von minden GmbH, NADAL COVID -19 Ag +Influenza A/B Test",
+            "display": "Nal von minden GmbH, NADAL COVID-19 Ag + Influenza A/B Test",
             "lang": "en",
             "active": true,
             "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
@@ -2495,10 +2495,10 @@
          "1375": {
             "display": "DIALAB GmbH, DIAQUICK COVID-19 Ag Cassette",
             "lang": "en",
-            "active": true,
+            "active": false,
             "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
-            "version": "2021-05-11 00:00:00 CEST",
-            "validUntil": "2022-02-03 00:00:00 CET"
+            "version": "2022-02-03 00:00:00 CET",
+            "validUntil": null
          },
          "2101": {
             "display": "AXIOM Gesellschaft für Diagnostica und Biochemica mbH, COVID-19 Antigen Rapid Test Card",
@@ -2573,7 +2573,7 @@
             "validUntil": null
          },
          "1822": {
-            "display": "Anbio (Xiamen) Biotechnology Co., Ltd, Rapid COVID-19 Antigen Test(Colloidal Gold)",
+            "display": "Anbio (Xiamen) Biotechnology Co., Ltd, Rapid COVID-19 Antigen Test (Colloidal Gold)",
             "lang": "en",
             "active": true,
             "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
@@ -2687,10 +2687,10 @@
          "2010": {
             "display": "Atlas Link Technology Co., Ltd., NOVA Test® SARS-CoV-2 Antigen Rapid Test Kit (Colloidal Gold Immunochromatography)",
             "lang": "en",
-            "active": true,
+            "active": false,
             "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
-            "version": "2021-07-07 05:19:54 CEST",
-            "validUntil": "2022-02-03 00:00:00 CET"
+            "version": "2022-02-03 00:00:00 CET",
+            "validUntil": null
          },
          "1162": {
             "display": "Nal von minden GmbH, NADAL COVID-19 Ag Test",
@@ -2831,13 +2831,13 @@
          "1324": {
             "display": "Guangzhou Decheng Biotechnology Co., LTD, V-CHEK, 2019-nCoV Ag Rapid Test Kit (Immunochromatography)",
             "lang": "en",
-            "active": true,
+            "active": false,
             "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
-            "version": "2021-07-07 05:06:03 CEST",
-            "validUntil": "2022-02-16 00:00:00 CET"
+            "version": "2022-02-16 00:00:00 CET",
+            "validUntil": null
          },
          "345": {
-            "display": "SD BIOSENSOR Inc, STANDARD Q COVID-19 Ag Test",
+            "display": "SD BIOSENSOR Inc, STANDARD Q COVID-19 Ag Test ",
             "lang": "en",
             "active": true,
             "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
@@ -3007,9 +3007,9 @@
          "2156": {
             "display": "ROCHE Diagnostics, Elecsys® SARS-CoV-2 Antigen",
             "lang": "en",
-            "active": true,
+            "active": false,
             "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
-            "version": "2021-10-20 00:00:00 CEST",
+            "version": "2022-03-16 00:00:00 CET",
             "validUntil": null
          },
          "2415": {
@@ -3363,6 +3363,126 @@
             "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
             "version": "2022-01-21 00:00:00 CET",
             "validUntil": null
+         },
+         "1865": {
+            "display": "Acon Biotech (Hangzhou) Co., Ltd, Flowflex SARS-CoV-2 Antigen Rapid Test (Nasal/Saliva)",
+            "lang": "en",
+            "active": true,
+            "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
+            "version": "2022-02-10 00:00:00 CET",
+            "validUntil": null
+         },
+         "2853": {
+            "display": "GenSure Biotech Inc, GenSure COVID-19 Antigen Rapid Test Kit",
+            "lang": "en",
+            "active": true,
+            "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
+            "version": "2022-02-10 00:00:00 CET",
+            "validUntil": null
+         },
+         "1899": {
+            "display": "Jiangsu Konsung Bio-Medical Science And Technology Co., Ltd., COVID-19 Antigen Rapid Test Kit (Colloidal Gold)",
+            "lang": "en",
+            "active": true,
+            "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
+            "version": "2022-02-10 00:00:00 CET",
+            "validUntil": null
+         },
+         "2151": {
+            "display": "JINAN BABIO BIOTECHNOLOGY CO., LTD., SARS-CoV-2 Antigen Rapid Detection Kit (Colloidal Gold Method)",
+            "lang": "en",
+            "active": true,
+            "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
+            "version": "2022-02-10 00:00:00 CET",
+            "validUntil": null
+         },
+         "2260": {
+            "display": "Multi-G bvba, Covid19Check-NAS",
+            "lang": "en",
+            "active": true,
+            "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
+            "version": "2022-02-10 00:00:00 CET",
+            "validUntil": null
+         },
+         "1573": {
+            "display": "Nantong Egens Biotechnology Co.,Ltd, COVID-19 Antigen Rapid Test Kit",
+            "lang": "en",
+            "active": true,
+            "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
+            "version": "2022-02-10 00:00:00 CET",
+            "validUntil": null
+         },
+         "2608": {
+            "display": "Neo-nostics (Suzhou) Bioengineering Co., Ltd., COVID 19 Antigen Test Kit (Colloidal Gold Method)",
+            "lang": "en",
+            "active": true,
+            "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
+            "version": "2022-02-10 00:00:00 CET",
+            "validUntil": null
+         },
+         "1200": {
+            "display": "Ortho Clinical Diagnostics, VITROS Immunodiagnostic Products SARS-CoV-2 Antigen",
+            "lang": "en",
+            "active": true,
+            "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
+            "version": "2022-02-10 00:00:00 CET",
+            "validUntil": null
+         },
+         "2519": {
+            "display": "BIOLAN HEALTH, S.L., COVID-19 Antigen Rapid Test (Colloidal Gold Method)",
+            "lang": "en",
+            "active": true,
+            "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
+            "version": "2022-03-04 00:00:00 CET",
+            "validUntil": null
+         },
+         "2724": {
+            "display": "Fosun Diagnostics (Shanghai) Co.,Ltd., Fosun Covid-19 Ag CARD",
+            "lang": "en",
+            "active": true,
+            "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
+            "version": "2022-03-04 00:00:00 CET",
+            "validUntil": null
+         },
+         "2257": {
+            "display": "Hangzhou AllTest Biotech Co., Ltd., SARS-CoV-2 Antigen Rapid Test (Nasal Swab)",
+            "lang": "en",
+            "active": true,
+            "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
+            "version": "2022-03-04 00:00:00 CET",
+            "validUntil": null
+         },
+         "1988": {
+            "display": "Inzek International trading, Biozek covid-19 Antigen Rapidtest BCOV-502",
+            "lang": "en",
+            "active": true,
+            "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
+            "version": "2022-03-04 00:00:00 CET",
+            "validUntil": null
+         },
+         "2672": {
+            "display": "Pierenkemper GmbH, (SARS-CoV-2) Antigen Rapid Test COVIDENT COVID-19",
+            "lang": "en",
+            "active": true,
+            "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
+            "version": "2022-03-04 00:00:00 CET",
+            "validUntil": null
+         },
+         "2742": {
+            "display": "Wuhan HealthCare Biotechnology Co., Ltd., SARS-CoV-2 Antigen Test Kit (Colloidal Gold)",
+            "lang": "en",
+            "active": true,
+            "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
+            "version": "2022-03-04 00:00:00 CET",
+            "validUntil": null
+         },
+         "2201": {
+            "display": "Zybio Inc., SARS-CoV-2 Antigen Assay Kit (Colloidal Gold Method)",
+            "lang": "en",
+            "active": true,
+            "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
+            "version": "2022-03-04 00:00:00 CET",
+            "validUntil": null
          }
       }
    },
@@ -3408,7 +3528,7 @@
    },
    "vaccine-mah-manf.json": {
       "valueSetId": "vaccines-covid-19-auth-holders",
-      "valueSetDate": "2021-11-09",
+      "valueSetDate": "2022-01-26",
       "valueSetValues": {
          "ORG-100001699": {
             "display": "AstraZeneca AB",
@@ -3474,7 +3594,7 @@
             "version": ""
          },
          "ORG-100032020": {
-            "display": "Novavax CZ AS",
+            "display": "Novavax CZ a.s.",
             "lang": "en",
             "active": true,
             "system": "https://spor.ema.europa.eu/v1/organisations",
@@ -3563,12 +3683,26 @@
             "active": true,
             "system": "https://spor.ema.europa.eu/v1/organisations",
             "version": ""
+         },
+         "ORG-100000788": {
+            "display": "Sanofi Pasteur",
+            "lang": "en",
+            "active": true,
+            "system": "https://spor.ema.europa.eu/v1/organisations",
+            "version": ""
+         },
+         "ORG-100036422": {
+            "display": "Valneva France",
+            "lang": "en",
+            "active": true,
+            "system": "https://spor.ema.europa.eu/v1/organisations",
+            "version": ""
          }
       }
    },
    "vaccine-medicinal-product.json": {
       "valueSetId": "vaccines-covid-19-names",
-      "valueSetDate": "2021-11-09",
+      "valueSetDate": "2022-01-26",
       "valueSetValues": {
          "EU/1/20/1528": {
             "display": "Comirnaty",
@@ -3578,7 +3712,7 @@
             "version": ""
          },
          "EU/1/20/1507": {
-            "display": "Spikevax (previously COVID-19 Vaccine Moderna)",
+            "display": "Spikevax",
             "lang": "en",
             "active": true,
             "system": "https://ec.europa.eu/health/documents/community-register/html/",
@@ -3606,9 +3740,9 @@
             "version": "1.0"
          },
          "NVX-CoV2373": {
-            "display": "NVX-CoV2373",
+            "display": "NVX-CoV2373 (deprecated)",
             "lang": "en",
-            "active": true,
+            "active": false,
             "system": "http://ec.europa.eu/temp/vaccineproductname",
             "version": "1.0"
          },
@@ -3641,9 +3775,9 @@
             "version": "1.0"
          },
          "Inactivated-SARS-CoV-2-Vero-Cell": {
-            "display": "Inactivated SARS-CoV-2 (Vero Cell)",
+            "display": "Inactivated SARS-CoV-2 (Vero Cell) (deprecated)",
             "lang": "en",
-            "active": true,
+            "active": false,
             "system": "http://ec.europa.eu/temp/vaccineproductname",
             "version": "1.0"
          },
@@ -3723,6 +3857,48 @@
             "active": true,
             "system": "http://ec.europa.eu/temp/vaccineproductname",
             "version": "1.6"
+         },
+         "EU/1/21/1618": {
+            "display": "Nuvaxovid",
+            "lang": "en",
+            "active": true,
+            "system": "https://ec.europa.eu/health/documents/community-register/html/",
+            "version": ""
+         },
+         "Covovax": {
+            "display": "Covovax",
+            "lang": "en",
+            "active": true,
+            "system": "http://ec.europa.eu/temp/vaccineproductname",
+            "version": "1.8"
+         },
+         "Vidprevtyn": {
+            "display": "Vidprevtyn",
+            "lang": "en",
+            "active": true,
+            "system": "http://ec.europa.eu/temp/vaccineproductname",
+            "version": "1.8"
+         },
+         "VLA2001": {
+            "display": "VLA2001",
+            "lang": "en",
+            "active": true,
+            "system": "http://ec.europa.eu/temp/vaccineproductname",
+            "version": "1.8"
+         },
+         "EpiVacCorona-N": {
+            "display": "EpiVacCorona-N",
+            "lang": "en",
+            "active": true,
+            "system": "http://ec.europa.eu/temp/vaccineproductname",
+            "version": "1.8"
+         },
+         "Sputnik-M": {
+            "display": "Sputnik M",
+            "lang": "en",
+            "active": true,
+            "system": "http://ec.europa.eu/temp/vaccineproductname",
+            "version": "1.8"
          }
       }
    },
