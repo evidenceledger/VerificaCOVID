@@ -24,5 +24,18 @@
       "x": "9hJB6caTWukZE14kn_OG1rfIdz670E5j5K2971ZgAOE",
       "y": "71UOZXY6JZQSMj1nvS4qc9xsUu-8_XZuLUDUrTT1fHI"
     }
+  },
+  "Saf0s5eMkIQ=": {
+    "co": "CAT",
+    "kid": "Saf0s5eMkIQ=",
+    "jwk": {
+      "kty": "EC",
+      "crv": "P-256",
+      "x": "ej6yg-gtP53DoIr1rtWVVHPsyqLRbdOwhHEpC-oFAo0",
+      "y": "M6YH8V4HW9wYoGmysGctOPt7j0w6l6VWEoBNKBa_ooY",
+      "use": "sig",
+      "kid": "Saf0s5eMkIQ=",
+      "x5t#S256": "Saf0s5eMkIRN75iwUKykHmHNCWRCfwGXP024EBqe5nE="
+    }
   }
 }
