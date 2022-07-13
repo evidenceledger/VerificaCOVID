@@ -1770,7 +1770,7 @@
    },
    "test-manf.json": {
       "valueSetId": "covid-19-lab-test-manufacturer-and-name",
-      "valueSetDate": "2022-03-21",
+      "valueSetDate": "2022-06-20",
       "valueSetValues": {
          "1341": {
             "display": "Qingdao Hightop Biotech Co., Ltd, SARS-CoV-2 Antigen Rapid Test",
@@ -1861,7 +1861,7 @@
             "validUntil": null
          },
          "1610": {
-            "display": "Hangzhou Clongene Biotech Co., Ltd, COVID-19 Antigen Rapid Test Cassette",
+            "display": "Hangzhou Clongene Biotech Co., Ltd, COVID-19 Antigen Rapid Test Cassette (Nasal Swab)",
             "lang": "en",
             "active": true,
             "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
@@ -1925,7 +1925,7 @@
             "validUntil": null
          },
          "1736": {
-            "display": "Anhui Deep Blue Medical Technology Co., Ltd, COVID-19 (SARS-CoV-2) Antigen Test Kit(Colloidal Gold)",
+            "display": "Anhui Deep Blue Medical Technology Co., Ltd, COVID-19 (SARS-CoV-2) Antigen Test Kit (Colloidal Gold)",
             "lang": "en",
             "active": true,
             "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
@@ -2077,7 +2077,7 @@
             "validUntil": null
          },
          "1363": {
-            "display": "Hangzhou Clongene Biotech Co., Ltd, Covid-19 Antigen Rapid Test Kit",
+            "display": "Hangzhou Clongene Biotech Co., Ltd, COVID-19 Antigen Rapid Test",
             "lang": "en",
             "active": true,
             "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
@@ -2125,7 +2125,7 @@
             "validUntil": null
          },
          "770": {
-            "display": "Assure Tech. (Hangzhou) Co., Ltd, ECOTEST COVID-19 Antigen Rapid Test Device",
+            "display": "Assure Tech. (Hangzhou) Co., Ltd, ECOTEST COVID-19 Antigen Rapid Test Device (Nasal swab, Nasopharyngeal swab, Oropharyngeal swab)",
             "lang": "en",
             "active": true,
             "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
@@ -2335,9 +2335,9 @@
          "1244": {
             "display": "GenBody, Inc, GenBody COVID-19 Ag",
             "lang": "en",
-            "active": false,
+            "active": true,
             "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
-            "version": "2021-12-16 00:00:00 CET",
+            "version": "2022-04-08 00:00:00 CEST",
             "validUntil": null
          },
          "1243": {
@@ -2397,7 +2397,7 @@
             "validUntil": null
          },
          "2350": {
-            "display": "Assure Tech. (Hangzhou) Co., Ltd., ECOTEST COVID-19 Antigen Rapid Test Device",
+            "display": "Assure Tech. (Hangzhou) Co., Ltd., ECOTEST COVID-19 Antigen Rapid Test Device (Nasopharyngeal swab, Oropharyngeal swab)",
             "lang": "en",
             "active": true,
             "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
@@ -2789,7 +2789,7 @@
             "validUntil": null
          },
          "1173": {
-            "display": "CerTest Biotec, CerTest SARS-CoV-2 Card test",
+            "display": "CerTest Biotec, CerTest SARS-CoV-2",
             "lang": "en",
             "active": true,
             "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
@@ -2831,9 +2831,9 @@
          "1324": {
             "display": "Guangzhou Decheng Biotechnology Co., LTD, V-CHEK, 2019-nCoV Ag Rapid Test Kit (Immunochromatography)",
             "lang": "en",
-            "active": false,
+            "active": true,
             "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
-            "version": "2022-02-16 00:00:00 CET",
+            "version": "2022-03-04 00:00:00 CET",
             "validUntil": null
          },
          "345": {
@@ -2943,9 +2943,9 @@
          "1960": {
             "display": "DiaSorin S.p.A, LIAISON® SARS-CoV-2 Ag",
             "lang": "en",
-            "active": true,
+            "active": false,
             "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
-            "version": "2021-10-20 00:00:00 CEST",
+            "version": "2022-03-22 00:00:00 CET",
             "validUntil": null
          },
          "2273": {
@@ -3253,7 +3253,7 @@
             "validUntil": null
          },
          "2741": {
-            "display": "OSANG Healthcare Co., Ltd, GeneFinder COVID-19 Ag Plus Rapid Test",
+            "display": "OSANG Healthcare Co., Ltd, GeneFinder™ COVID-19 Ag Plus Rapid Test",
             "lang": "en",
             "active": true,
             "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
@@ -3423,9 +3423,9 @@
          "1200": {
             "display": "Ortho Clinical Diagnostics, VITROS Immunodiagnostic Products SARS-CoV-2 Antigen",
             "lang": "en",
-            "active": true,
+            "active": false,
             "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
-            "version": "2022-02-10 00:00:00 CET",
+            "version": "2022-03-22 00:00:00 CET",
             "validUntil": null
          },
          "2519": {
@@ -3482,6 +3482,110 @@
             "active": true,
             "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
             "version": "2022-03-04 00:00:00 CET",
+            "validUntil": null
+         },
+         "1926": {
+            "display": "ARISTA Biotech Pte. Ltd, ARISTA™ COVID-19 Antigen Rapid Test",
+            "lang": "en",
+            "active": true,
+            "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
+            "version": "2022-04-08 00:00:00 CEST",
+            "validUntil": null
+         },
+         "2302": {
+            "display": "Hangzhou AllTest Biotech Co., Ltd., COVID-19 Antigen Test Cassette (Nasopharyngeal Swab)",
+            "lang": "en",
+            "active": true,
+            "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
+            "version": "2022-04-08 00:00:00 CEST",
+            "validUntil": null
+         },
+         "2862": {
+            "display": "Hangzhou Funworld Biotech Co., Ltd, SARS-CoV-2 Antigen Rapid Test Device",
+            "lang": "en",
+            "active": true,
+            "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
+            "version": "2022-04-08 00:00:00 CEST",
+            "validUntil": null
+         },
+         "2979": {
+            "display": "Hangzhou Jucheng Medical Products Co., Ltd, SARS-CoV-2 Ag Rapid Test Kit",
+            "lang": "en",
+            "active": true,
+            "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
+            "version": "2022-04-08 00:00:00 CEST",
+            "validUntil": null
+         },
+         "1783": {
+            "display": "InTec PRODUCTS, INC., Rapid SARS-CoV-2 Antigen Test (nasopharyngeal/nasal specimen)",
+            "lang": "en",
+            "active": true,
+            "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
+            "version": "2022-04-08 00:00:00 CEST",
+            "validUntil": null
+         },
+         "2963": {
+            "display": "Jiangxi Province JinHuan Medical Instrument Co., LTD., DREHA Novel Coronavirus (SARS-CoV-2) Antigen Rapid Detection Kit",
+            "lang": "en",
+            "active": true,
+            "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
+            "version": "2022-04-08 00:00:00 CEST",
+            "validUntil": null
+         },
+         "2685": {
+            "display": "PRIMA Lab SA, COVID-19 Antigen Rapid Test",
+            "lang": "en",
+            "active": true,
+            "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
+            "version": "2022-04-08 00:00:00 CEST",
+            "validUntil": null
+         },
+         "2941": {
+            "display": "Shenzhen Kingfocus Biomedical Engineering Co., Ltd., COVID-19 Antigen Detection Kit(Quantum Dots-Based Immunofluorescence Chromatography)",
+            "lang": "en",
+            "active": true,
+            "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
+            "version": "2022-04-08 00:00:00 CEST",
+            "validUntil": null
+         },
+         "2942": {
+            "display": "Hangzhou Zheda Dixun Biological Gene Engineering Co., Ltd., SARS-CoV-2 Nucleocapsid (N) Antigen Rapid Test Cassette (Swab)",
+            "lang": "en",
+            "active": true,
+            "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
+            "version": "2022-05-06 00:00:00 CEST",
+            "validUntil": null
+         },
+         "1791": {
+            "display": "Immunospark s.r.l., Rapid SARS-Cov2 Antigen Test",
+            "lang": "en",
+            "active": true,
+            "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
+            "version": "2022-05-06 00:00:00 CEST",
+            "validUntil": null
+         },
+         "2866": {
+            "display": "Lifecosm Biotech Limited, COVID-19 Antigen Test Cassette",
+            "lang": "en",
+            "active": true,
+            "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
+            "version": "2022-05-06 00:00:00 CEST",
+            "validUntil": null
+         },
+         "2812": {
+            "display": "Shenzhen Huaree Technology Co.,Ltd, SARS-CoV-2 Antigen Rapid Test Kit (Immunochromatography)",
+            "lang": "en",
+            "active": true,
+            "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
+            "version": "2022-05-06 00:00:00 CEST",
+            "validUntil": null
+         },
+         "3015": {
+            "display": "Suzhou Soochow University Saier Immuno Biotech Co., Ltd., InstantSure Covid-19 Ag CARD",
+            "lang": "en",
+            "active": true,
+            "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
+            "version": "2022-05-06 00:00:00 CEST",
             "validUntil": null
          }
       }
@@ -3697,6 +3801,41 @@
             "active": true,
             "system": "https://spor.ema.europa.eu/v1/organisations",
             "version": ""
+         },
+         "Instituto-Butantan": {
+            "display": "Instituto Butantan",
+            "lang": "en",
+            "active": true,
+            "system": "http://ec.europa.eu/temp/vaccinemanufacturer",
+            "version": "1.9"
+         },
+         "NVSI": {
+            "display": "National Vaccine and Serum Institute, China",
+            "lang": "en",
+            "active": true,
+            "system": "http://ec.europa.eu/temp/vaccinemanufacturer",
+            "version": "1.9"
+         },
+         "Yisheng-Biopharma": {
+            "display": "Yisheng Biopharma",
+            "lang": "en",
+            "active": true,
+            "system": "http://ec.europa.eu/temp/vaccinemanufacturer",
+            "version": "1.9"
+         },
+         "ORG-100026614": {
+            "display": "Sinocelltech Ltd.",
+            "lang": "en",
+            "active": true,
+            "system": "https://spor.ema.europa.eu/v1/organisations",
+            "version": ""
+         },
+         "ORG-100008549": {
+            "display": "Medicago Inc.",
+            "lang": "en",
+            "active": true,
+            "system": "https://spor.ema.europa.eu/v1/organisations",
+            "version": ""
          }
       }
    },
@@ -3789,14 +3928,14 @@
             "version": "1.0"
          },
          "Covaxin": {
-            "display": "Covaxin (also known as BBV152 A, B, C)",
+            "display": "Covaxin",
             "lang": "en",
             "active": true,
             "system": "http://ec.europa.eu/temp/vaccineproductname",
             "version": "1.0"
          },
          "Covishield": {
-            "display": "Covishield (ChAdOx1_nCoV-19)",
+            "display": "Covishield",
             "lang": "en",
             "active": true,
             "system": "http://ec.europa.eu/temp/vaccineproductname",
@@ -3899,6 +4038,48 @@
             "active": true,
             "system": "http://ec.europa.eu/temp/vaccineproductname",
             "version": "1.8"
+         },
+         "Covid-19-adsorvida-inativada": {
+            "display": "Vacina adsorvida covid-19 (inativada)",
+            "lang": "en",
+            "active": true,
+            "system": "http://ec.europa.eu/temp/vaccineproductname",
+            "version": "1.9"
+         },
+         "NVSI-06-08": {
+            "display": "NVSI-06-08",
+            "lang": "en",
+            "active": true,
+            "system": "http://ec.europa.eu/temp/vaccineproductname",
+            "version": "1.9"
+         },
+         "YS-SC2-010": {
+            "display": "YS-SC2-010",
+            "lang": "en",
+            "active": true,
+            "system": "http://ec.europa.eu/temp/vaccineproductname",
+            "version": "1.9"
+         },
+         "SCTV01C": {
+            "display": "SCTV01C",
+            "lang": "en",
+            "active": true,
+            "system": "http://ec.europa.eu/temp/vaccineproductname",
+            "version": "1.9"
+         },
+         "Covifenz": {
+            "display": "Covifenz",
+            "lang": "en",
+            "active": true,
+            "system": "http://ec.europa.eu/temp/vaccineproductname",
+            "version": "1.9"
+         },
+         "AZD2816": {
+            "display": "AZD2816",
+            "lang": "en",
+            "active": true,
+            "system": "http://ec.europa.eu/temp/vaccineproductname",
+            "version": "1.9"
          }
       }
    },
@@ -3926,6 +4107,27 @@
             "active": true,
             "version": "2021-01",
             "system": "http://www.whocc.no/atc"
+         },
+         "1162643001": {
+            "display": "SARS-CoV-2 recombinant spike protein antigen vaccine",
+            "lang": "en",
+            "active": true,
+            "version": "2022-01-31",
+            "system": "http://snomed.info/sct"
+         },
+         "1157024006": {
+            "display": "Inactivated whole SARS-CoV-2 antigen vaccine",
+            "lang": "en",
+            "active": true,
+            "version": "2022-01-31",
+            "system": "http://snomed.info/sct"
+         },
+         "29061000087103": {
+            "display": "COVID-19 non-replicating viral vector vaccine",
+            "lang": "en",
+            "active": true,
+            "version": "2022-01-31",
+            "system": "http://snomed.info/sct"
          }
       }
    }
